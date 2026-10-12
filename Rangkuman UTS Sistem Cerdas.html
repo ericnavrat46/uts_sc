@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rangkuman UTS Sistem Cerdas</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--text:#1d2433;--muted:#5d677d;--line:#e3e8f1;--a:#4f46e5;--a2:#06b6d4;--soft:#eef0ff;--ok:#16a34a;--warn:#d97706;--code:#111827;--codet:#e5e7eb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1220;--card:#171c2e;--text:#e8ecf6;--muted:#9aa5bf;--line:#272f47;--a:#818cf8;--a2:#22d3ee;--soft:#1f2547;--ok:#4ade80;--warn:#fbbf24;--code:#0a0d18}}
+:root[data-theme="dark"]{--bg:#0e1220;--card:#171c2e;--text:#e8ecf6;--muted:#9aa5bf;--line:#272f47;--a:#818cf8;--a2:#22d3ee;--soft:#1f2547;--ok:#4ade80;--warn:#fbbf24;--code:#0a0d18}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+header{background:linear-gradient(135deg,var(--a),var(--a2));color:#fff;padding:48px 20px 56px;text-align:center}
+header h1{margin:0 0 8px;font-size:clamp(1.6rem,5vw,2.6rem)}
+header p{margin:0;opacity:.92}
+.badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 14px;border-radius:99px;font-size:.85rem;margin-bottom:14px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:10px 14px;scrollbar-width:none}
+nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:.85rem;padding:6px 12px;border-radius:99px;background:var(--soft)}
+nav a:hover{color:var(--a)}
+main{max-width:900px;margin:0 auto;padding:24px 16px 60px}
+section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:22px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+h2{margin:0 0 14px;font-size:1.35rem;display:flex;align-items:center;gap:12px}
+h2 .n{background:linear-gradient(135deg,var(--a),var(--a2));color:#fff;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-size:1rem;flex:none}
+h3{margin:18px 0 8px;font-size:1.05rem;color:var(--a)}
+p{margin:8px 0}
+ul,ol{padding-left:22px;margin:8px 0}
+li{margin:4px 0}
+.note{border-left:4px solid var(--a);background:var(--soft);padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0}
+.note.warn{border-color:var(--warn)}
+.note.ok{border-color:var(--ok)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.box{background:var(--soft);border-radius:12px;padding:14px}
+.box b{display:block;color:var(--a);margin-bottom:4px}
+.steps{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.step{display:flex;gap:12px;align-items:flex-start;background:var(--soft);border-radius:12px;padding:10px 14px}
+.step i{font-style:normal;background:var(--a);color:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:.8rem;flex:none;margin-top:2px}
+.step small{display:block;color:var(--muted)}
+.tw{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:.92rem}
+th{background:var(--a);color:#fff;text-align:left;padding:9px 12px}
+th:first-child{border-radius:10px 0 0 0}th:last-child{border-radius:0 10px 0 0}
+td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:var(--soft)}
+code{background:var(--soft);color:var(--a);padding:1px 6px;border-radius:5px;font-size:.88em}
+pre{background:var(--code);color:var(--codet);padding:16px;border-radius:12px;overflow-x:auto;font-size:.82rem;line-height:1.5}
+pre code{background:none;color:inherit;padding:0}
+.tag{display:inline-block;font-size:.75rem;padding:2px 10px;border-radius:99px;font-weight:600}
+.y{background:rgba(22,163,74,.15);color:var(--ok)}
+.t{background:rgba(217,119,6,.15);color:var(--warn)}
+.cm{display:grid;grid-template-columns:auto 1fr 1fr;max-width:340px;gap:4px;text-align:center;font-size:.85rem;margin:12px 0}
+.cm div{padding:12px 8px;border-radius:8px;background:var(--soft)}
+.cm .h{background:none;color:var(--muted);font-weight:600}
+.cm .g{background:rgba(22,163,74,.18)}.cm .r{background:rgba(220,38,38,.15)}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 16px 30px}
+@media(max-width:520px){section{padding:18px 14px}}
+</style>
+</head>
+<body>
+<header>
+<span class="badge">📘 Materi UTS</span>
+<h1>Rangkuman Sistem Cerdas</h1>
+<p>Preprocessing • Random Forest • Pengumpulan Data • Evaluasi Model</p>
+</header>
+<nav>
+<a href="#s1">1. Preprocessing RF</a><a href="#s2">2. Tahapan Preprocessing</a><a href="#s3">3. Pengumpulan Data</a><a href="#s4">4. Studi Kasus</a><a href="#s5">5. Indikator</a><a href="#s6">6. Scaling</a><a href="#s7">7. Outlier</a>
+</nav>
+<main>
+
+<section id="s1">
+<h2><span class="n">1</span>Preprocessing pada Random Forest</h2>
+<p><b>Random Forest (RF)</b> adalah <i>ensemble</i> dari banyak decision tree. Tiap pohon dilatih dengan sampel <i>bootstrap</i> (bagging) dan subset fitur acak. Hasil akhir: <b>voting mayoritas</b> (klasifikasi) atau <b>rata-rata</b> (regresi).</p>
+<div class="tw"><table>
+<tr><th>Tahap</th><th>Perlu?</th><th>Keterangan</th></tr>
+<tr><td>Cleaning (missing value, duplikat)</td><td><span class="tag y">Ya</span></td><td>sklearn tidak menerima NaN → imputasi / hapus</td></tr>
+<tr><td>Encoding kategorikal</td><td><span class="tag y">Ya</span></td><td>Label / One-Hot Encoding, input harus numerik</td></tr>
+<tr><td>Scaling</td><td><span class="tag t">Tidak wajib</span></td><td>RF memakai threshold split, bukan jarak</td></tr>
+<tr><td>Outlier</td><td><span class="tag t">Relatif tahan</span></td><td>Robust, tapi error input tetap dibersihkan</td></tr>
+<tr><td>Data tidak seimbang</td><td><span class="tag y">Jika timpang</span></td><td><code>class_weight='balanced'</code>, SMOTE, undersampling</td></tr>
+<tr><td>Seleksi fitur</td><td><span class="tag t">Opsional</span></td><td>Memakai <code>feature_importances_</code></td></tr>
+<tr><td>Split data</td><td><span class="tag y">Ya</span></td><td>Gunakan <code>stratify</code> agar proporsi kelas terjaga</td></tr>
+</table></div>
+<h3>Hyperparameter penting</h3>
+<p><code>n_estimators</code> <code>max_depth</code> <code>min_samples_split</code> <code>min_samples_leaf</code> <code>max_features</code> <code>random_state</code></p>
+<div class="grid">
+<div class="box"><b>✅ Kelebihan</b>Akurasi tinggi, kurangi overfitting, tahan outlier/noise, ada feature importance.</div>
+<div class="box"><b>⚠️ Kekurangan</b>Sulit diinterpretasi dibanding satu pohon, komputasi dan memori lebih berat.</div>
+</div>
+</section>
+
+<section id="s2">
+<h2><span class="n">2</span>Semua Tahapan Preprocessing</h2>
+<p>Menyiapkan data mentah agar berkualitas dan siap dipakai model.</p>
+<div class="steps">
+<div class="step"><i>1</i><div><b>Data Cleaning</b><small>Missing value (hapus / imputasi mean, median, modus), hapus duplikat, perbaiki data tidak konsisten.</small></div></div>
+<div class="step"><i>2</i><div><b>Integrasi Data</b><small>Menggabungkan data dari beberapa sumber atau tabel.</small></div></div>
+<div class="step"><i>3</i><div><b>Penanganan Outlier</b><small>Deteksi dan tangani nilai ekstrem.</small></div></div>
+<div class="step"><i>4</i><div><b>Transformasi Data</b><small>Scaling/normalisasi, encoding kategorikal, feature engineering, diskretisasi.</small></div></div>
+<div class="step"><i>5</i><div><b>Reduksi Data / Seleksi Fitur</b><small>Korelasi, feature importance, atau PCA untuk kurangi dimensi.</small></div></div>
+<div class="step"><i>6</i><div><b>Penanganan Data Tidak Seimbang</b><small>SMOTE, oversampling, undersampling.</small></div></div>
+<div class="step"><i>7</i><div><b>Pembagian Data (Split)</b><small>Train, test, (validation), misal 80:20 atau 70:30; atau cross-validation.</small></div></div>
+</div>
+</section>
+
+<section id="s3">
+<h2><span class="n">3</span>Pengumpulan Data</h2>
+<p>Tahap memperoleh data untuk membangun sistem cerdas. Prinsipnya: <b><i>garbage in, garbage out</i></b>.</p>
+<div class="grid">
+<div class="box"><b>Data Primer</b>Dikumpulkan sendiri: survei/kuesioner, wawancara, observasi, eksperimen, sensor/IoT.</div>
+<div class="box"><b>Data Sekunder</b>Sudah tersedia: dataset publik (Kaggle, UCI), database instansi, jurnal.</div>
+<div class="box"><b>Scraping &amp; API</b>Mengambil data dari situs atau layanan online.</div>
+</div>
+<h3>Hal yang diperhatikan</h3>
+<ul>
+<li>Relevan dengan tujuan penelitian</li>
+<li>Jumlah cukup dan kelas seimbang</li>
+<li>Kualitas &amp; validitas: akurat, lengkap, konsisten</li>
+<li>Pelabelan untuk supervised learning</li>
+<li>Format: CSV, Excel, JSON, database</li>
+<li>Etika &amp; privasi: izin penggunaan, anonimisasi</li>
+</ul>
+</section>
+
+<section id="s4">
+<h2><span class="n">4</span>Implementasi Studi Kasus</h2>
+<p>Contoh: klasifikasi kelayakan / kelulusan / penyakit dengan Random Forest.</p>
+<div class="steps">
+<div class="step"><i>1</i><div><b>Perumusan masalah</b><small>Tentukan target, klasifikasi atau regresi.</small></div></div>
+<div class="step"><i>2</i><div><b>Pengumpulan data</b><small>Ambil dataset, pahami atribut dan label.</small></div></div>
+<div class="step"><i>3</i><div><b>EDA</b><small>Statistik deskriptif, distribusi, korelasi.</small></div></div>
+<div class="step"><i>4</i><div><b>Preprocessing</b><small>Cleaning, outlier, encoding, scaling (jika perlu), split.</small></div></div>
+<div class="step"><i>5</i><div><b>Pemodelan</b><small>Latih model, misalnya Random Forest.</small></div></div>
+<div class="step"><i>6</i><div><b>Evaluasi</b><small>Accuracy, precision, recall, F1, confusion matrix.</small></div></div>
+<div class="step"><i>7</i><div><b>Tuning</b><small>GridSearchCV / RandomizedSearchCV.</small></div></div>
+<div class="step"><i>8</i><div><b>Analisis &amp; kesimpulan</b><small>Bandingkan model, lihat fitur paling berpengaruh.</small></div></div>
+</div>
+<pre><code>import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+
+df = pd.read_csv("data.csv").drop_duplicates()
+df = df.fillna(df.median(numeric_only=True))   # imputasi
+
+# hapus outlier dengan IQR
+Q1, Q3 = df["nilai"].quantile([0.25, 0.75])
+IQR = Q3 - Q1
+df = df[df["nilai"].between(Q1-1.5*IQR, Q3+1.5*IQR)]
+
+X, y = df.drop("label", axis=1), df["label"]
+X_tr, X_te, y_tr, y_te = train_test_split(
+    X, y, test_size=0.2, stratify=y, random_state=42)
+
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_tr, y_tr)
+print(classification_report(y_te, model.predict(X_te)))</code></pre>
+</section>
+
+<section id="s5">
+<h2><span class="n">5</span>Indikator (Evaluasi Model)</h2>
+<h3>Confusion Matrix</h3>
+<div class="cm">
+<div class="h"></div><div class="h">Prediksi +</div><div class="h">Prediksi −</div>
+<div class="h">Aktual +</div><div class="g">TP</div><div class="r">FN</div>
+<div class="h">Aktual −</div><div class="r">FP</div><div class="g">TN</div>
+</div>
+<h3>Klasifikasi</h3>
+<div class="tw"><table>
+<tr><th>Indikator</th><th>Rumus</th><th>Makna</th></tr>
+<tr><td><b>Accuracy</b></td><td>(TP+TN) / total</td><td>Proporsi prediksi benar</td></tr>
+<tr><td><b>Precision</b></td><td>TP / (TP+FP)</td><td>Ketepatan prediksi positif</td></tr>
+<tr><td><b>Recall</b></td><td>TP / (TP+FN)</td><td>Kemampuan menemukan semua positif</td></tr>
+<tr><td><b>Specificity</b></td><td>TN / (TN+FP)</td><td>Kemampuan mengenali negatif</td></tr>
+<tr><td><b>F1-Score</b></td><td>2·(P·R) / (P+R)</td><td>Rata-rata harmonik precision &amp; recall</td></tr>
+<tr><td><b>ROC-AUC</b></td><td>luas area kurva ROC</td><td>Kemampuan memisahkan kelas</td></tr>
+</table></div>
+<h3>Regresi</h3>
+<ul>
+<li><b>MAE</b> = rata-rata |y − ŷ|</li>
+<li><b>MSE</b> = rata-rata (y − ŷ)²</li>
+<li><b>RMSE</b> = √MSE</li>
+<li><b>R²</b> = seberapa baik model menjelaskan variasi data</li>
+</ul>
+<h3>Khusus Random Forest</h3>
+<ul>
+<li><b>OOB score</b>: evaluasi dengan data yang tidak terpilih saat bootstrap</li>
+<li><b>Feature importance</b>: tingkat pengaruh tiap fitur</li>
+</ul>
+<div class="note warn">Pada data tidak seimbang, accuracy bisa menyesatkan. Gunakan precision, recall, dan F1.</div>
+</section>
+
+<section id="s6">
+<h2><span class="n">6</span>Tahapan Scaling</h2>
+<p>Menyamakan rentang nilai antar fitur. Penting untuk algoritma berbasis jarak/gradien (KNN, SVM, Neural Network, K-Means), <b>tidak wajib</b> untuk RF dan decision tree.</p>
+<div class="tw"><table>
+<tr><th>Metode</th><th>Rumus</th><th>Hasil</th><th>Cocok untuk</th></tr>
+<tr><td><b>Min-Max</b></td><td>(x − min) / (max − min)</td><td>0 – 1</td><td>Data tanpa outlier ekstrem</td></tr>
+<tr><td><b>Standardization (Z-score)</b></td><td>(x − μ) / σ</td><td>Mean 0, std 1</td><td>Distribusi normal</td></tr>
+<tr><td><b>Robust</b></td><td>(x − median) / IQR</td><td>Tahan outlier</td><td>Data beroutlier</td></tr>
+<tr><td><b>MaxAbs</b></td><td>x / |max|</td><td>−1 sampai 1</td><td>Data sparse</td></tr>
+<tr><td><b>Log Transform</b></td><td>log(x)</td><td>Kurangi skewness</td><td>Data miring</td></tr>
+</table></div>
+<div class="note ok"><b>Aturan penting:</b> <code>fit</code> scaler hanya pada data <b>train</b>, lalu <code>transform</code> pada train &amp; test, agar tidak terjadi <i>data leakage</i>.</div>
+</section>
+
+<section id="s7">
+<h2><span class="n">7</span>Outlier</h2>
+<p>Nilai data yang menyimpang jauh dari pola data lainnya.</p>
+<p><b>Penyebab:</b> kesalahan input/pengukuran, noise, error sistem, atau kejadian ekstrem yang memang nyata.</p>
+<h3>Metode deteksi</h3>
+<div class="grid">
+<div class="box"><b>Boxplot / IQR</b>IQR = Q3 − Q1.<br>Outlier jika x &lt; Q1 − 1,5·IQR atau x &gt; Q3 + 1,5·IQR.</div>
+<div class="box"><b>Z-score</b>z = (x − μ) / σ.<br>Outlier jika |z| &gt; 3.</div>
+<div class="box"><b>Visualisasi</b>Scatter plot dan histogram.</div>
+<div class="box"><b>Lanjutan</b>Isolation Forest, DBSCAN, Local Outlier Factor.</div>
+</div>
+<h3>Penanganan</h3>
+<ul>
+<li><b>Menghapus</b> jika jelas error</li>
+<li><b>Capping / Winsorizing</b>: batasi ke batas atas/bawah</li>
+<li><b>Imputasi</b> dengan mean/median</li>
+<li><b>Transformasi</b> (misal log) untuk meredam pengaruh</li>
+<li><b>Dibiarkan</b> jika kejadian nyata yang penting (fraud/anomali)</li>
+</ul>
+</section>
+
+</main>
+<footer>Semoga sukses UTS Sistem Cerdas! 🎓</footer>
+</body>
+</html>
